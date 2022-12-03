@@ -104,6 +104,7 @@ node
 repo
 installation
 pprint "\n\n\n\n\nSuzune Music Installation Completed!" "cgreen"
+
 sleep 4
 clear
 
