@@ -25,7 +25,7 @@ update() {
 	pprint "\n\nUpdating package list.. "
 	sudo apt update 2>&1 | grep "can be upgraded" &>/dev/null
 	if [ $? -eq 0 ]; then
-		pprint "UPDATE AVAILABLE" "cgreen"
+		pprint "UPDATE AVAILABLE" "cyellow"
 		pprint "\n\nDo you want to automatically upgrade (y/n)?"
 		if yesnoprompt; then
 			pprint "\n\nUpgrading packages.. "
@@ -75,8 +75,8 @@ node(){
 
 repo(){
 	# Get git repo if the installer is runned standalone
-	[[ ! "VirusMusicBot" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
-	git clone https://github.com/SPARTENX-OP/VirusMusicBot &&  cd VirusMusicBot
+	[[ ! "SuzuneMusicBot" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
+	git clone https://github.com/desinobita/natsumebot &&  cd natsumebot
 }
 
 
@@ -90,7 +90,7 @@ installation(){
 }
 
 clear
-pprint "Welcome to Virus Setup Installer\n\n"
+pprint "Welcome to Suzune Setup Installer\n\n"
 pprint "If you see any error during Installation Process, Please refer to these files for logs: "
 pprint "\nFor node js errors , Checkout nodelog.txt"
 pprint "\nFor pypi packages errors , Checkout pypilog.txt"
@@ -103,7 +103,7 @@ packages
 node
 repo
 installation
-pprint "\n\n\n\n\nVirus Music Installation Completed!" "cgreen"
+pprint "\n\n\n\n\nSuzune Music Installation Completed!" "cgreen"
 sleep 4
 clear
 
